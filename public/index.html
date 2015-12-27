@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="meetup">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Organizer</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/lib/foundation/css/normalize.min.css" />
+    <link rel="stylesheet" href="assets/lib/foundation/css/foundation.min.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- endinject -->
+    <link rel="author" href="humans.txt">
+</head>
+
+<body>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/#/">Event Organizer</a></h1>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="left">
+                <li><a href="/#/browse">Browse Events</a></li>
+                <li><a href="/#/create">Create An Event</a></li>
+            </ul>
+            <!-- right Nav Section -->
+            <ul class="right offset-1">
+                <li><a href="/#/register">Register</a></li>
+                <li><a href="/#/login">Login</a></li>
+            </ul>
+        </section>
+    </nav>
+    <div ng-view></div>
+    <!-- bower:js -->
+    <script src="assets/lib/jquery/dist/jquery.js"></script>
+    <script src="assets/lib/modernizr/modernizr.js"></script>
+    <script src="assets/lib/fastclick/lib/fastclick.js"></script>
+    <script src="assets/lib/jquery.cookie/jquery.cookie.js"></script>
+    <script src="assets/lib/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="assets/lib/angular/angular.js"></script>
+    <script src="assets/lib/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app.config.js"></script>
+    <script src="/components/auth/login.controller.js"></script>
+    <script src="/components/auth/register.controller.js"></script>
+    <script src="/components/create/create.controller.js"></script>
+    <script src="/components/main/main.controller.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

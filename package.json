@@ -1,0 +1,25 @@
+{
+  "name": "spa-meetup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "body-parser": "^1.14.2",
+    "eslint": "^1.10.3",
+    "gulp": "^3.9.0",
+    "gulp-inject": "^3.0.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.3.4",
+    "nodemon": "^1.8.1",
+    "wiredep": "^3.0.0"
+  }
+}
