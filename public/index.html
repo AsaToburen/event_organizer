@@ -24,6 +24,7 @@
             </li>
         </ul>
         <section class="top-bar-section">
+            
             <ul class="left">
                 <li><a href="/#/browse">Browse Events</a></li>
                 <li><a href="/#/create">Create An Event</a></li>
@@ -44,13 +45,19 @@
     <script src="assets/lib/jquery-placeholder/jquery.placeholder.js"></script>
     <script src="assets/lib/angular/angular.js"></script>
     <script src="assets/lib/angular-route/angular-route.js"></script>
+    <script src="assets/lib/angularjs-geolocation/src/geolocation.js"></script>
     <!-- endbower -->
+    <script src="assets/lib/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDphXx4ZqTSbPfJ9YMkG1Z9AUDu4h4DSrU"></script>
     <!-- inject:js -->
     <script src="/app.config.js"></script>
     <script src="/components/auth/login.controller.js"></script>
     <script src="/components/auth/register.controller.js"></script>
     <script src="/components/create/create.controller.js"></script>
+    <script src="/components/dashboard/dashboard.controller.js"></script>
     <script src="/components/main/main.controller.js"></script>
+    <script src="/shared/mapService.js"></script>
+    <script src="/shared/venueService.js"></script>
     <!-- endinject -->
 </body>
 

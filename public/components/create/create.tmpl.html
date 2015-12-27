@@ -1,7 +1,68 @@
 <div class="large-10 large-centered columns">
     <div class="panel">
         <h1>Create An Event</h1>
-        
-        
+        <div class="row">
+            <div class="large-7 columns">
+                <div class="location">
+                    <div class="row">
+                        <div class="pop-venues" ng-if="hideVenueBtn">
+                            <label for="">Popular Venues:</label>
+                            <div class="left">
+                                <div class="panel callout radius" ng-repeat="venue in venues">
+                                    <h3>{{venue.name}}</h3>
+                                    <h4>{{venue.location.formattedAddress}}</h4>
+                                    <img class="venue_icon right" src="{{venue.categories[0].icon.prefix}}64.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns large-10 venue-box" ng-hide="hideVenueBtn" ng-click="getVenues()">
+                            <h3>Choose from Popular Venues</h3>
+                        </div>
+                        <div class="columns large-10 left venue-box">
+                            <h3>Add Your Own Venue</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+            <div class="large-5 columns">
+                <form name="addForm" novalidate>
+                    <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                    <div class="form-group">
+                        <label for="title">Event Title<span class="badge right">All fields required</span></label>
+                        <input type="text" class="form-control" id="username" placeholder="JavaScript Workshop" ng-model="formData.eventTitle" required>
+                    </div>
+                    <label class="radio control-label">Type:</label>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radiomale" value="Class" ng-model="formData.eventType">Class
+                    </label>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radiofemale" value="Workshop" ng-model="formData.eventType">Workshop
+                    </label>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radioother" value="Party" ng-model="formData.eventType">Party
+                    </label>
+                    <div class="form-group">
+                        <label for="cost">Cost: $</label>
+                        <input type="number" class="form-control" id="cost" placeholder="12" ng-model="formData.cost" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" class="form-control" id="contact_name" placeholder="Primary contact" ng-model="formData.contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Contact Phone</label>
+                        <input type="text" class="form-control" id="contact_phone" placeholder="(555)-555-5555" ng-model="formData.contactPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" ng-model="formData.address" required>
+                    </div>
+                    <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                    <button type="submit" class="right" ng-click="createEvent()">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

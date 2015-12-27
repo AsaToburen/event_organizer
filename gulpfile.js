@@ -5,7 +5,7 @@ var nodemon = require('nodemon');
 
 var config = {
     port: 3000,
-    jsFiles: ['*.js', 'public/**/*.js', 'public/**/**/*.js']
+    jsFiles: ['*.js', 'public/**/*.js', 'public/**/**/*.js', 'public/**/**/**/*.js']
 };
 
 gulp.task('inject', function() {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meetup', ['ngRoute'])
+angular.module('meetup', ['ngRoute', 'geolocation'])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
                 controller: 'MainCtrl',
@@ -13,6 +13,10 @@ angular.module('meetup', ['ngRoute'])
             .when('/create', {
                 controller: 'CreateCtrl',
                 templateUrl: './components/create/create.tmpl.html'
+            })
+            .when('/dashboard', {
+                controller: 'DashCtrl',
+                templateUrl: './components/dashboard.tmpl.html'
             })
             .when('/login', {
                 controller: 'LoginCtrl',

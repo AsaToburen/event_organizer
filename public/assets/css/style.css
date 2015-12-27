@@ -1,43 +1,66 @@
-
-
-
 /* Login Panel */
 
 .header.panel {
-  margin: 3rem auto;
-  border: 2px solid #444;
-  background: #fff; }
-  .header.panel p {
+    margin: 3rem auto;
+    border: 2px solid #444;
+    background: #fff;
+}
+
+.header.panel p {
     font: 1rem "Avenir Next";
     padding: 1rem 2rem 2rem 2rem;
-    margin-top: -1.25rem; }
-    .header.panel p span {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 75%;
-      font-weight: bold; }
-  .header.panel .sign {
+    margin-top: -1.25rem;
+}
+
+.header.panel p span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 75%;
+    font-weight: bold;
+}
+
+.header.panel .sign {
     background: #fff;
     width: 150px;
     height: 2.4rem;
     border: 2px solid #444;
     position: relative;
     top: -2.5rem;
-    margin: auto; }
+    margin: auto;
+}
 
-    .header.panel .sign h1 {
-      text-transform: uppercase;
-      font: bolder 0.875rem "Avenir Next";
-      letter-spacing: 3px;
-      color: #666;
-      font-size: 70%;
-      text-align: center;
-      line-height: 2rem; }
+.header.panel .sign h1 {
+    text-transform: uppercase;
+    font: bolder 0.875rem "Avenir Next";
+    letter-spacing: 3px;
+    color: #666;
+    font-size: 70%;
+    text-align: center;
+    line-height: 2rem;
+}
 
-        .header.panel .sign-up {
+.header.panel .sign-up {
     width: 190px;
- }
-    
+}
 
 
 /*=======================================*/
+
+div.pop-venues .callout {
+    overflow: auto;
+}
+
+div.pop-venues h4 {
+    display: inline-block;
+    width: 70%;
+}
+
+div.venue-box {
+    background-color: #5F9EA0;
+    padding: 5em 2em;
+    margin: 1em 0;
+}
+
+div.venue-box .venue_icon {
+    background-color: #ddd;
+}
