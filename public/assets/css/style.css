@@ -46,6 +46,10 @@
 
 /*=======================================*/
 
+div.pop-venues, div.venue_form {
+    clear: left;
+}
+
 div.pop-venues .callout {
     overflow: auto;
 }
@@ -55,9 +59,14 @@ div.pop-venues h4 {
     width: 70%;
 }
 
+div.venue-list {
+    overflow: auto;
+    height: 29.5em;
+}
+
 div.venue-box {
     background-color: #5F9EA0;
-    padding: 5em 2em;
+    padding: 1em 2em;
     margin: 1em 0;
 }
 

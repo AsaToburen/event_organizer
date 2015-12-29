@@ -2,12 +2,28 @@
     <div class="panel">
         <h1>Create An Event</h1>
         <div class="row">
-            <div class="large-7 columns">
-                <div class="location">
-                    <div class="row">
+            <div class="large-7 columns location">
+                <div class="row">
+                    <div class="wrapper large-10">
+                        <div class="columns venue-box" ng-hide="hideVenueBtn" ng-click="getVenues()">
+                            <h3>Choose from Popular Venues</h3>
+                        </div>
+                        <div class="columns left venue-box" ng-hide="hideAddVenueBtn" ng-click="createVenue()">
+                            <h3>Add Your Own Venue</h3>
+                        </div>
+                        <div class="venue_form" ng-if="hideAddVenueBtn">
+                            <form name="addForm" novalidate>
+                                <div class="form-group">
+                                    <label for="Name">Name</label>
+                                    <input ng-model="formData.venueName" type="text">
+                                    <label for="Address">Address</label>
+                                    <input ng-model="formData.venueAddress" type="text">
+                                </div>
+                            </form>
+                        </div>
                         <div class="pop-venues" ng-if="hideVenueBtn">
                             <label for="">Popular Venues:</label>
-                            <div class="left">
+                            <div class="left venue-list">
                                 <div class="panel callout radius" ng-repeat="venue in venues">
                                     <h3>{{venue.name}}</h3>
                                     <h4>{{venue.location.formattedAddress}}</h4>
@@ -15,14 +31,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="columns large-10 venue-box" ng-hide="hideVenueBtn" ng-click="getVenues()">
-                            <h3>Choose from Popular Venues</h3>
-                        </div>
-                        <div class="columns large-10 left venue-box">
-                            <h3>Add Your Own Venue</h3>
-                        </div>
-                    </div>
-                    <div class="row">
                     </div>
                 </div>
             </div>
@@ -33,19 +41,9 @@
                         <label for="title">Event Title<span class="badge right">All fields required</span></label>
                         <input type="text" class="form-control" id="username" placeholder="JavaScript Workshop" ng-model="formData.eventTitle" required>
                     </div>
-                    <label class="radio control-label">Type:</label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="radiomale" value="Class" ng-model="formData.eventType">Class
-                    </label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="radiofemale" value="Workshop" ng-model="formData.eventType">Workshop
-                    </label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="radioother" value="Party" ng-model="formData.eventType">Party
-                    </label>
                     <div class="form-group">
-                        <label for="cost">Cost: $</label>
-                        <input type="number" class="form-control" id="cost" placeholder="12" ng-model="formData.cost" required>
+                        <label for="capacity">Capacity</label>
+                        <input type="number" class="form-control" id="capacity" ng-model="formData.capacity" required>
                     </div>
                     <div class="form-group">
                         <label for="contactName">Contact Name</label>
@@ -56,8 +54,12 @@
                         <input type="text" class="form-control" id="contact_phone" placeholder="(555)-555-5555" ng-model="formData.contactPhone" required>
                     </div>
                     <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" ng-model="formData.address" required>
+                        <label for="time">Start Time</label>
+                        <input name="start" type="time">
+                    </div>
+                    <div>
+                        <label for="end">End Time</label>
+                        <input name="end" type="time">
                     </div>
                     <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
                     <button type="submit" class="right" ng-click="createEvent()">Submit</button>

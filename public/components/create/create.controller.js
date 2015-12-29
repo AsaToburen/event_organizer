@@ -6,6 +6,7 @@ angular.module('meetup')
         function($scope, $http, VenueService) {
 
             $scope.hideVenueBtn = false;
+            $scope.hideAddVenueBtn = false;
 
             // Initializes Variables
             // ----------------------------------------------------------------------------
@@ -14,11 +15,16 @@ angular.module('meetup')
             // Set initial coordinates to the center of the US
             $scope.formData.address = "7001 N. California Highway";
 
+            $scope.createVenue = function(){
+                $scope.hideAddVenueBtn = true;
+                $scope.hideVenueBtn = false;
+                
 
+            };
 
             $scope.getVenues = function() {
                 VenueService.getVenues().then(function(data) {
-
+                    $scope.hideAddVenueBtn = false;
                     $scope.hideVenueBtn = true;
                     console.log(data.response.venues);
                     $scope.venues = data.response.venues;
