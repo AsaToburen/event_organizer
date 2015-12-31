@@ -2,8 +2,8 @@
 
 
 angular.module('meetup')
-    .controller('CreateCtrl', ['$scope', '$http', 'VenueService',
-        function($scope, $http, VenueService) {
+    .controller('CreateCtrl', ['$scope', '$http', 'FourSquareService',
+        function($scope, $http, FourSquareService) {
 
             $scope.hideVenueBtn = false;
             $scope.hideAddVenueBtn = false;
@@ -12,18 +12,13 @@ angular.module('meetup')
             // ----------------------------------------------------------------------------
             $scope.formData = {};
 
-            // Set initial coordinates to the center of the US
-            $scope.formData.address = "7001 N. California Highway";
-
-            $scope.createVenue = function(){
+            $scope.createVenue = function() {
                 $scope.hideAddVenueBtn = true;
                 $scope.hideVenueBtn = false;
-                
-
             };
 
             $scope.getVenues = function() {
-                VenueService.getVenues().then(function(data) {
+                FourSquareService.getVenues().then(function(data) {
                     $scope.hideAddVenueBtn = false;
                     $scope.hideVenueBtn = true;
                     console.log(data.response.venues);
@@ -42,14 +37,13 @@ angular.module('meetup')
                 // Grabs all of the text box fields
                 var eventData = {
                     eventTitle: $scope.formData.eventTitle,
-                    eventType: $scope.formData.eventType,
-                    cost: $scope.formData.cost,
+                    capacity: $scope.formData.capacity,
                     contactName: $scope.formData.contactName,
                     contactPhone: $scope.formData.contactPhone,
-                    address: $scope.formData.address
+                    venueName: $scope.formData.venueName,
+                    venueAddress: $scope.formData.venueAddress
                 };
 
-                console.log(eventData);
                 // Saves the user data to the db
                 $http.post('/createEvent', eventData)
                     .success(function(data) {
@@ -57,10 +51,10 @@ angular.module('meetup')
                         // Once complete, clear the form (except location)
                         $scope.formData.eventTitle = "";
                         $scope.formData.eventType = "";
-                        $scope.formData.cost = "";
                         $scope.formData.contactName = "";
                         $scope.formData.contactPhone = "";
-                        $scope.formData.address = "";
+                        $scope.formData.venueName = "";
+                        $scope.formData.venueAddress = "";
 
                         $location.path('/');
                     })

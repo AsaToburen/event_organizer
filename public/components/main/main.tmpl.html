@@ -1,6 +1,16 @@
-
-
-<div class="panel">
-  <h5>This is a regular panel.</h5>
-  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+<div class="row">
+    <div class="large-12 columns">
+        <div class="header-container" style="background-image: url({{events[0].group.photos[0].highres_link}})">
+            <h3>Check out the {{events[0].group.name}} group.</h3>
+            <p>Upcoming Event: {{events[0].group.status}} Event: {{events[0].name}}</p>
+        </div>
+    </div>
+</div>
+<div class="row thumbnails">
+    <div class="large-3 small-6 columns align-top" ng-repeat="event in events | limitTo: 17" ng-if="$index > 0">
+        <img ng-src="{{event.group.photos[0].photo_link}}">
+        <div class="panel">
+            <p>{{event.group.name}}</p>
+        </div>
+    </div>
 </div>

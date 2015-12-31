@@ -46,7 +46,44 @@
 
 /*=======================================*/
 
-div.pop-venues, div.venue_form {
+
+/* MAIN PAGE STYLES */
+
+.header-container {
+    height: 26em;
+    background-size: cover;
+    background-position: 50%;
+    margin-bottom: 1.5em;
+    padding-top: .5em;
+}
+
+.header-container h3 {
+    padding: .5em;
+    background: #457fca;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #457fca 0%, #d7d2cc 41%, transparent 100%);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #457fca 0%, #d7d2cc 41%, transparent 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header-container p {
+    position: absolute;
+    bottom: 1.5em;
+    right: 2em;
+}
+
+.thumbnails {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+
+/*==============================*/
+
+div.pop-venues,
+div.venue_form {
     clear: left;
 }
 

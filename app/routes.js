@@ -4,10 +4,10 @@ var path = require('path');
 
 var Event = require('./models/events');
 var FoursquareCtrl = require('./controller/foursquare.controller.js');
+var MeetupCtrl = require('./controller/meetup.controller.js');
 
 
 module.exports = function(app) {
-
     // GET Routes
     // --------------------------------------------------------
     // Retrieve records for all users in the db
@@ -44,28 +44,12 @@ module.exports = function(app) {
     });
 
 
-    app.get('/api/venues/', FoursquareCtrl.getVenues);
+    app.get('/api/venues/:location', FoursquareCtrl.getVenues);
 
+    app.get('/api/events/:location', MeetupCtrl.getLocalEvents);
+    app.get('/api/browse/:id', MeetupCtrl.getEventsByCategory);
 
-    ////OLD
-
-    // server routes ===========================================================
-    // handle things like api calls
-    // authentication routes
-
-    // sample api route
-    //app.get('/api/events', function(req, res) {
-    //    // use mongoose to get all nerds in the database
-    //    Events.find(function(err, events) {
-    //
-    //        // if there is an error retrieving, send the error. 
-    //                        // nothing after res.send(err) will execute
-    //        if (err)
-    //            res.send(err);
-    //
-    //        res.json(events); // return all nerds in JSON format
-    //    });
-    //});
+    app.get('/api/categories/', MeetupCtrl.getEventCategories);
 
 
     app.get('*', function(req, res) {
